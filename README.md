@@ -7,7 +7,7 @@
   Originally from  <a href="https://github.com/JasonEtco/activity-box">JasonEtco/activity-box</a>.
 </i></p>
 
-# github-activity-box.
+# github-activity-box
 
 [![npm](https://img.shields.io/npm/v/github-activity-box.svg?style=flat-square&color=444)](https://www.npmjs.com/package/github-activity-box)
 [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/maxchang3/github-activity-box/ci.yml?style=flat-square&label=CI)](https://github.com/maxchang3/github-activity-box/actions)
