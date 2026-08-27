@@ -34,4 +34,4 @@ jobs:
           # EXCLUDE_REPO: username/repo1,username/repo2
           EXCLUDE_OWNER: ${{ vars.EXCLUDE_OWNER }}
           EXCLUDE_REPO: ${{ vars.EXCLUDE_REPO }}
-          DESCRIPTION: Your custom description
+          DESCRIPTION: Your custom descriptio
