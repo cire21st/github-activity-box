@@ -1,0 +1,37 @@
+name: Activity Box
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/30 * * * *'  # Updates every 30 minutes
+
+jobs:
+  update-activity:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+          run_install: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Update activity
+        run: npx github-activity-box@0
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GH_USERNAME: cire21st
+          GIST_ID: ${{ secrets.GIST_ID }}
+          # You can also use hardcoded values instead of variables
+          # EXCLUDE_OWNER: username1,username2
+          # EXCLUDE_REPO: username/repo1,username/repo2
+          EXCLUDE_OWNER: ${{ vars.EXCLUDE_OWNER }}
+          EXCLUDE_REPO: ${{ vars.EXCLUDE_REPO }}
+          DESCRIPTION: Your custom description
